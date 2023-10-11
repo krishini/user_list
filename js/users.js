@@ -129,6 +129,9 @@ users.forEach(user => {
     <td class="user-age">${user.age}</td>
     <td class="user-date">${formatDate(user.bornDate)}</td>
     <td>
+    <button class="action-btn btn-danger" title="eliminar">
+    <i class="fa-solid fa-trash-can"></i>
+    </button>
     </td>
   </tr>`
 })
