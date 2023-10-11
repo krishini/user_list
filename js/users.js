@@ -117,7 +117,12 @@ const tableBody = document.getElementById("table-body");
 console.log(tableBody);
 // iterar el array y agregar un tr por cada alumno que tengamos
 
-users.forEach(user => {
+printUsersList()
+
+function printUsersList() {
+  tableBody.innerHTML = '';
+//for each tiene un parameytro por defecto que es index, asi que se puede usar para mapear la posicion del elemento en el array que se recorre
+users.forEach((user, index) => {
     tableBody.innerHTML += `<tr class="table-body">
     <td class="user-image">
         <img src="${user.image}" alt="${user.fullname}">
@@ -129,12 +134,18 @@ users.forEach(user => {
     <td class="user-age">${user.age}</td>
     <td class="user-date">${formatDate(user.bornDate)}</td>
     <td>
-    <button class="action-btn btn-danger" title="eliminar">
+    <button class="action-btn btn-danger" 
+    title="eliminar"
+    onclick="deleteUser(${index})"
+    >
     <i class="fa-solid fa-trash-can"></i>
     </button>
     </td>
   </tr>`
 })
+}
 
-
- 
+function deleteUser(index) {
+  users.splice(index,1)
+  printUsersList()
+}
