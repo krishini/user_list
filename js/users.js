@@ -114,7 +114,15 @@ const users = [
 
 // obtebner el body de la tabla
 const tableBody = document.getElementById("table-body");
-console.log(tableBody);
+const searchInput = document.querySelector('#search')
+
+//toda funcion que se ejecuta luego de un evento puede recibir el evento en sí
+searchInput.addEventListener('keyup', (event) => {
+  
+  const inputValue = event.target.value;
+console.log(inputValue)
+})
+
 // iterar el array y agregar un tr por cada alumno que tengamos
 
 printUsersList()
