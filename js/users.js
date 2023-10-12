@@ -118,19 +118,26 @@ const searchInput = document.querySelector('#search')
 
 //toda funcion que se ejecuta luego de un evento puede recibir el evento en sí
 searchInput.addEventListener('keyup', (event) => {
-  
-  const inputValue = event.target.value;
-console.log(inputValue)
+
+  const inputValue = event.target.value.toLowerCase();
+
+  // .filter me guarda la cosas en un array nuevo, no me modifica el array original
+  const filterUsers = users.filter((user) => user.fullname.toLowerCase().includes(inputValue))
+  // const filterUsers = users.filter((user) => {
+  //   const nombre = user.fullname.toLowerCase(); 
+  //   return nombre.includes(inputValue)
+  // })
+  printUsersList(filterUsers)
 })
 
 // iterar el array y agregar un tr por cada alumno que tengamos
 
-printUsersList()
+printUsersList(users)
 
-function printUsersList() {
+function printUsersList(imprimirArray) {
   tableBody.innerHTML = '';
 //for each tiene un parameytro por defecto que es index, asi que se puede usar para mapear la posicion del elemento en el array que se recorre
-users.forEach((user, index) => {
+imprimirArray.forEach((user, index) => {
     tableBody.innerHTML += `<tr class="table-body">
     <td class="user-image">
         <img src="${user.image}" alt="${user.fullname}">
@@ -155,6 +162,6 @@ users.forEach((user, index) => {
 
 function deleteUser(index) {
   users.splice(index,1)
-  printUsersList()
+  printUsersList(users)
 }
 
