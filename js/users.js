@@ -111,7 +111,6 @@ const users = [
   }
 ];
 
-
 // obtebner el body de la tabla
 const tableBody = document.getElementById("table-body");
 const searchInput = document.querySelector('#search')

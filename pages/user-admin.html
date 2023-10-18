@@ -8,25 +8,87 @@
 </head>
 <body>
   <h1>admin users</h1>
+
+
+<div class="admin-container">
+  <section class="form-container">
+    <form id="user-form">
+      <div class="input-group">
+        <label for="fullname">Nombre completo</label>
+        <input type="text" name="fullname" id="fullname">
+</div>
+<div class="input-group">
+        <label for="email">Email</label>
+        <input type="enail" name="email" id="email">
+</div>
+
+<div class="input-group">
+        <label for="location">Ubicación</label>
+<select name="location" id="location">
+  <option value="">--Please choose an option--</option>
+  <option value="buenos aires">Buenos Aires</option>
+  <option value="mendoza">Mendoza</option>
+  <option value="chubut">Chubut</option>
+  <option value="cordoba">Córdoba</option>
+  <option value="jujuy">Jujuy</option>
+  <option value="salta">Salta</option>
+</select>
+</div>
+
+<div class="input-group">
+        <label for="age">Edad</label>
+        <input type="number" name="age" id="age">
+</div>
+
+<div class="input-group">
+        <label for="bornDate">Fecha de nacimiento</label>
+        <input type="date" name="bornDate" id="bornDate">
+</div>
+
+<div class="input-group">
+        <label for="image">avatar</label>
+        <input type="url" name="image" id="image">
+</div>
+
+<!-- <div>
+        <label for="active">activo</label>
+        <input type="checkbox" name="active" id="active" value="active">
+</div> -->
+
+ <!-- #checkbox -->
+ <div class="mb">
+  <label for="active">Activo</label>
+  <input type="checkbox" name="active" id="active" value="active">
+</div>
+
+<button type="submit" class="btn-form">Agregar</button>
+   
+    </form>
+  </section>
+
   <div class="input-container">
     <input type="text" class="input" id="search" placeholder="Buscar por nombre">
 </div>
-  <table class="user-table">
-    <thead>
-        <tr class="table-head">
-            <th>Avatar</th>
-            <th>Nombre Completo</th>
-            <th>Email</th>
-            <th>Localidad</th>
-            <th>Edad</th>
-            <th>Fecha Nacimiento</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody id="table-body">
-     
-    </tbody>
-</table>
+  <section class="table-container">
+      <table class="user-table">
+          <thead>
+              <tr class="table-head">
+                  <th>Avatar</th>
+                  <th>Nombre Completo</th>
+                  <th>Email</th>
+                  <th>Localidad</th>
+                  <th>Edad</th>
+                  <th>Fecha Nacimiento</th>
+                  <th>Acciones</th>
+              </tr>
+          </thead>
+          <tbody id="table-body">
+              
+          </tbody>
+      </table>
+  </section>
+</div>
+
 <script src="../js/script.js"></script>
 <script src="../js/users.js"></script>
 <script src="https://kit.fontawesome.com/72ef26cd5b.js" crossorigin="anonymous"></script>
